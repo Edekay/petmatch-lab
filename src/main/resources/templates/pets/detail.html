@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Detalle de Mascota | PetMatch Mini')}"></head>
+
+<body>
+    <nav th:replace="~{fragments/navigation :: navigation}"></nav>
+
+    <main class="page-container">
+        <section class="content-panel">
+            <h1 th:text="${pet.name}">Nombre</h1>
+            <p class="page-intro">Conoce más detalles sobre este integrante que busca un hogar.</p>
+
+            <div class="pet-card" style="margin-top: 20px;">
+                <p><strong>ID:</strong> <span th:text="${pet.id}">1</span></p>
+                <p><strong>Especie:</strong> <span th:text="${pet.species}">Especie</span></p>
+                <p><strong>Edad:</strong> <span th:text="${pet.age}">3</span> años</p>
+                <p><strong>Descripción:</strong></p>
+                <p style="background: #1a1a1a; padding: 15px; border-radius: 6px; border-left: 3px solid #20c997;"
+                    th:text="${pet.description}">Descripción completa...</p>
+            </div>
+
+            <p style="margin-top: 25px;">
+                <a class="back-link" th:href="@{/pets}">← Volver al catálogo</a>
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>
